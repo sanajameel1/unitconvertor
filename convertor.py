@@ -63,9 +63,9 @@ col1, col2 = st.columns(2)
 
 if conversion_type == "Length":
     with col1:
-        from_unit = st.selectbox("From",  ["Meters", "Kilograms", "Centimeters", "Milimeters", "Miless", "Yard", "Inches", "Feed"])
+        from_unit = st.selectbox("From",  ["Meters", "Kilograms", "Centimeters", "Milimeters", "Miless", "Yards", "Inches", "Feed"])
     with col2:
-        to_unit = st.selectbox("To", ["Meters", "Kilograms", "Centimeters", "Milimeters", "Miless", "Yard", "Inches", "Feed"])
+        to_unit = st.selectbox("To", ["Meters", "Kilograms", "Centimeters", "Milimeters", "Miless", "Yards", "Inches", "Feed"])
 elif conversion_type == "Weight":
     with col1:
         from_unit = st.selectbox("From", ["Kilograms", "Grams", "Pounds", "Ounces"])
@@ -81,7 +81,7 @@ elif conversion_type == "Temperature":
 def length_convertor(value, from_unit, to_unit):
     length_units = {
         "Meters": 1,  "Kilograms": 0.001, "Centimeters": 100, "Milimeters": 1000,
-         "Miles": 0.000621371, "Yards": 1.09361, "Inches": 39.37, "Feed": 3.28
+         "Miless": 0.000621371, "Yards": 1.09361, "Inches": 39.37, "Feed": 3.28
     }
     return (value / length_units[from_unit]) * length_units[to_unit]
 
